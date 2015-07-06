@@ -18,6 +18,7 @@ public class TransferRunnable implements Runnable{
 				int toAccount = (int) (bank.size() * Math.random());
 				double amount = maxAmount * Math.random();
 				bank.transfer(fromAccount, toAccount, amount);
+				//睡眠DELAY * Math.random()毫秒，放大线程竞争概率
 				Thread.sleep((int) (DELAY * Math.random()));
 			} catch (InterruptedException e) {
 			}
